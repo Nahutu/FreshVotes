@@ -10,8 +10,8 @@
 	<div class="container">
 		<form th:action="@{/login}" method="post">
 			<input type="hidden"
-				name="${_csrf.parameterName}"
-				value="${_csrf.token}"/>
+				th:name="${_csrf.parameterName}"
+				th:value="${_csrf.token}"/>
 			<fieldset>
 				<legend>Please Login</legend>
 				<!-- use param.error assuming FormLoginConfigurer#failureUrl contains the query parameter error -->
