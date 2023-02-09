@@ -57,6 +57,7 @@ public class ProductController {
 	public String createProduct(@AuthenticationPrincipal User user) {
 		Product product = new Product();
 		product.setPublished(false);
+		System.out.println(user);
 		product.setUser(user);
 		product = productRepository.save(product);
 		return "redirect:/products/"+product.getId();

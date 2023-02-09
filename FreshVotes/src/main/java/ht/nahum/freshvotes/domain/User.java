@@ -24,7 +24,7 @@ public class User {
 	private String name;
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "user")
 	Set<Authority> authorities = new HashSet<>();
-	@OneToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER, mappedBy = "user")
+	@OneToMany(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY, mappedBy = "user")
 	Set<Product> products = new HashSet<>();
 	
 	
