@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Feature {
@@ -13,6 +14,9 @@ public class Feature {
 	private String title;
 	private String description;
 	private String status;
+	@ManyToOne
+	private Product product;
+	
 	public Long getId() {
 		return id;
 	}
@@ -36,6 +40,12 @@ public class Feature {
 	}
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	public Product getProduct() {
+		return product;
+	}
+	public void setProduct(Product product) {
+		this.product = product;
 	}
 	
 	
